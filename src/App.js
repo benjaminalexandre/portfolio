@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+import 'app/assets/themes/index.less'
+
+import lang from 'utils/intl/lang'
+
+import LocaleWrapper from 'modules/shared/containers/LocaleWrapper'
+import Home from 'modules/home'
+
+const App = () => {
+  const [currentLang, setCurrentLang] = useState(lang.FR)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <LocaleWrapper lang={currentLang}>
+      <Home onChangeLang={setCurrentLang} currentLang={currentLang} />
+    </LocaleWrapper>
+  )
 }
 
-export default App;
+export default App

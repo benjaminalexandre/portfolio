@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": ".",
+    "paths": {
+      "modules/*": ["src/app/modules/*"],
+      "utils/*": ["src/app/utils/*"],
+      "lib/*": ["src/app/lib/*"],
+      "assets/*": ["src/app/assets/*"]
+    }
+  },
+  "exclude": ["dist"]
+}
