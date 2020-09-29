@@ -4,9 +4,10 @@
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,700i,900&display=swap');
 
-@font-family: 'Montserrat', sans-serif;
-@text-color: #000000;
+@basic-font: 'Montserrat', sans-serif;
+@text-color: rgba(0, 0, 0, 0.85);
 @font-size-base: 1rem; //17px
+@font-size-page-title: 8rem; //128px
 @font-size-lg-xxl: 2.471rem; //42px
 @font-size-lg-xl: 2.118rem; //36px
 @font-size-lg-sm: 1.824rem; //31px
@@ -28,15 +29,20 @@ html {
 }
 
 h1 {
-  font-size: @font-size-lg-xxl;
+  font-family: 'futuristic';
+  color: @fadein-blue;
+  font-size: @font-size-page-title;
   font-weight: @font-weight-bold;
-  line-height: 54px;
   margin: 0;
+  letter-spacing: 20px;
 }
 h2 {
-  font-size: @font-size-lg-xl;
-  font-weight: @font-weight-semi-bold;
+  font-family: @basic-font;
+  color: @blue;
+  font-size: @font-size-lg-xxl;
+  font-weight: @font-weight-base;
   line-height: 45px;
+  letter-spacing: 5px;
   margin: 0;
 }
 h3 {

@@ -31,6 +31,7 @@ export const IconWrapper = styled(Row)`
   justify-content: center;
   animation: ${translationIcon} 1.5s linear infinite;
   top: 45vh;
+  cursor: pointer;
 `
 
 export const StyledIcon = styled(Icon)`

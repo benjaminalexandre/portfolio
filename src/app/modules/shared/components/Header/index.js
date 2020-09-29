@@ -1,61 +1,68 @@
 import React from 'react'
-import styled from 'styled-components'
+import { injectIntl } from 'react-intl'
+import PropTypes from 'prop-types'
+import { Link } from 'react-scroll'
+// import * as Scroll from 'react-scroll'
 
-//import PropTypes from 'prop-types'
-import { injectIntl, FormattedMessage } from 'react-intl'
-
-import { Dropdown, Menu, Select, Icon, ICONS_LIST, ICONS_SIZE } from 'lib'
-import PROJECTS from 'utils/enums/projects'
-
-const { Option } = Select
-
-const User = styled.span`
-  font-weight: 700;
-`
-
-const Title = styled(Menu.Item)`
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff !important;
-`
-
-const Header = () => {
+const Header = ({ intl }) => {
   return (
-    <Menu className="main-menu" mode="horizontal">
-      <Title disabled className="no-hover">
-        Admin Panel
-      </Title>
-      <Menu.Item disabled>
-        <Select disabled defaultValue={PROJECTS.RC3} style={{ width: '250px' }}>
-          {Object.values(PROJECTS).map((x) => (
-            <Option value={x} key={x}>
-              <FormattedMessage id={`projects.project_${x}`} />
-            </Option>
-          ))}
-        </Select>
-      </Menu.Item>
-      <Dropdown
-        trigger={['click']}
-        placement="bottomRight"
-        overlay={
-          <Menu className="dropdown-menu" style={{ display: 'block', background: '#FFF', width: '272px' }}>
-            <Menu.Item disabled key="1" className="no-hover">
-              <User>admin</User>
-            </Menu.Item>
-            <Menu.Divider />
-            <Menu.Item key="6">
-              <Icon name={ICONS_LIST.logout} />
-              Logout
-            </Menu.Item>
-          </Menu>
-        }
-      >
-        <Icon name={ICONS_LIST.account} size={ICONS_SIZE.large} />
-      </Dropdown>
-    </Menu>
+    <>
+      <div className="menu-wrapper">
+        <div className="menu-content">
+          <Link
+            to="presentation"
+            smooth
+            duration={1000}
+            spy
+            className="menu-link"
+            activeClass="menu-link-active"
+          >
+            {intl.formatMessage({ id: 'menu.presentation' })}
+          </Link>
+          <Link to="skills" smooth duration={1000} spy className="menu-link" activeClass="menu-link-active">
+            {intl.formatMessage({ id: 'menu.skills' })}
+          </Link>
+          <Link
+            to="experiences"
+            smooth
+            duration={1000}
+            spy
+            className="menu-link"
+            activeClass="menu-link-active"
+          >
+            {intl.formatMessage({ id: 'menu.experiences' })}
+          </Link>
+          <Link
+            to="formation"
+            smooth
+            duration={1000}
+            spy
+            className="menu-link"
+            activeClass="menu-link-active"
+          >
+            {intl.formatMessage({ id: 'menu.formation' })}
+          </Link>
+          <Link
+            to="portfolio"
+            smooth
+            duration={1000}
+            spy
+            className="menu-link"
+            activeClass="menu-link-active"
+          >
+            {intl.formatMessage({ id: 'menu.portfolio' })}
+          </Link>
+          <Link to="contact" smooth duration={1000} spy className="menu-link" activeClass="menu-link-active">
+            {intl.formatMessage({ id: 'menu.contact' })}
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
 
-Header.propTypes = {}
+Header.propTypes = {
+  intl: PropTypes.shape().isRequired
+}
 
 export default injectIntl(Header)

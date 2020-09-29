@@ -6,6 +6,8 @@ import lang from 'utils/intl/lang'
 
 import LocaleWrapper from 'modules/shared/containers/LocaleWrapper'
 import Home from 'modules/home'
+import Header from 'modules/shared/components/Header'
+import Presentation from 'modules/presentation'
 
 const App = () => {
   const [currentLang, setCurrentLang] = useState(lang.FR)
@@ -13,6 +15,8 @@ const App = () => {
   return (
     <LocaleWrapper lang={currentLang}>
       <Home onChangeLang={setCurrentLang} currentLang={currentLang} />
+      <Header />
+      <Presentation />
     </LocaleWrapper>
   )
 }

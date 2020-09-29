@@ -19,7 +19,7 @@ const LocaleWrapper = (props) => {
 }
 
 LocaleWrapper.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element.isRequired),
   lang: PropTypes.shape().isRequired
 }
 

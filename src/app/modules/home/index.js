@@ -2,6 +2,7 @@ import React from 'react'
 import { injectIntl } from 'react-intl'
 import PropTypes from 'prop-types'
 import { keyframes } from 'styled-components'
+import { Link } from 'react-scroll'
 
 import { Col, ICONS_LIST, ICONS_SIZE } from 'lib/index'
 import img from 'app/assets/images'
@@ -40,9 +41,11 @@ const Home = (props) => {
         </Col>
       </Wrapper>
       <SwitchLanguage {...props} />
-      <IconWrapper>
-        <Icon name={ICONS_LIST.chevronTripleDown} size={ICONS_SIZE.xlarge} />
-      </IconWrapper>
+      <Link to="presentation" smooth duration={1000}>
+        <IconWrapper>
+          <Icon name={ICONS_LIST.chevronTripleDown} size={ICONS_SIZE.xlarge} />
+        </IconWrapper>
+      </Link>
     </BkgImg>
   )
 }

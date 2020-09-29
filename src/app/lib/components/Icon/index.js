@@ -10,7 +10,8 @@ export const TYPE = {
 }
 
 export const ICONS_LIST = {
-  chevronTripleDown: { id: 'ChevronTripleDown', type: TYPE.material }
+  chevronTripleDown: { id: 'ChevronTripleDown', type: TYPE.material },
+  download: { id: 'download', type: TYPE.ant }
 }
 
 export const SIZE = {
@@ -36,18 +37,7 @@ export const MARGIN = {
 }
 
 const IconStyled = styled(DefaultIcon)`
-  color: ${(props) => {
-    const { themecolor } = props
-    let color
-
-    if (themecolor === THEME.primary) {
-      color = props.theme.colors.primary.bg
-    } else if (themecolor === THEME.secondary) {
-      color = props.theme.colors.secondary.bg
-    }
-
-    return color
-  }};
+  color: white;
 
   ${(props) => {
     const { margin } = props

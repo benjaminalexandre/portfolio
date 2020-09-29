@@ -10,7 +10,7 @@ img {
 }
 // -------- Colors -----------
 @blue: #41a7f5;
-@fadein-blue: fadein(@blue, 30%);
+@fadein-blue: fadeout(@blue, 70%);
 @purple: #861d8a;
 @grey: #808080;
 @light-grey: #e6e6e6;
@@ -23,3 +23,23 @@ img {
 @border-radius-md: 9px;
 @border-radius-lg: 12px;
 @border-radius-extralg: 24px;
+
+.page-content {
+  padding: 0 200px 50px 200px;
+  font-size: @font-size-lg;
+  font-family: @basic-font;
+  color: @text-color;
+  display: flex;
+  flex-direction: column;
+
+  &-0 {
+    background: @background-color-1;
+  }
+  &-1 {
+    background: @background-color-2;
+  }
+  section {
+    padding: 1.333rem 0;
+    width: 100%;
+  }
+}

@@ -4,6 +4,7 @@ import frenchFlag from './img/france_flag.svg.png'
 import logo from './img/logo/logo.png'
 import logoName from './img/logo/logo_name.png'
 import logoJob from './img/logo/logo_job.png'
+import photoProfile from './img/benjamin_alexandre.jpg'
 
 const img = {
   homeBackground,
@@ -11,7 +12,8 @@ const img = {
   frenchFlag,
   logo,
   logoName,
-  logoJob
+  logoJob,
+  photoProfile
 }
 
 export default img
