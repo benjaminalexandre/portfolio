@@ -25,5 +25,17 @@ export default {
   "presentation.item.location": "Mâcon, Bourgogne",
   "presentation.item.name": "nom",
   "presentation.item.web_developer": "Développeur Web",
-  "presentation.item.years_old": "{age} ans"
+  "presentation.item.years_old": "{age} ans",
+  "skills.desc": "Mes expériences professionnelles et pré-professionnelles m'ont et me permettent aujourd'hui d'être un développeur autome et polyvant, dont voici un petit aperçu :",
+  "skills.skills.css": "CSS - SASS - LESS",
+  "skills.skills.english": "Anglais",
+  "skills.skills.git": "Outils Git",
+  "skills.skills.html": "HTML5",
+  "skills.skills.java": "Java",
+  "skills.skills.js": "Javascript - React JS",
+  "skills.skills.photoshop": "Photoshop",
+  "skills.skills.php": "Symfony - PHP",
+  "skills.skills.spanish": "Espagnol",
+  "skills.skills.sql": "MySQL",
+  "skills.skills.teamwork": "Teamwork"
 };

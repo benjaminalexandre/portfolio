@@ -1,10 +1,9 @@
 import React from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
-import Slide from 'react-reveal/Slide'
 
-import { PageTitle, Row, Col, Divider } from 'lib/index'
-import Layout from 'modules/shared/components/Layout'
+import { Row, Col, Divider } from 'lib'
+import { Layout, PageTitle, ScrollAnimation } from 'modules/shared/components'
 import img from 'app/assets/images'
 
 import Infos from './_components/Infos'
@@ -21,9 +20,9 @@ const Presentation = ({ intl }) => {
         />
         <Row type="flex" justify="space-around" align="middle">
           <Col span={7} className="profile-container">
-            <Slide left>
+            <ScrollAnimation animateIn="fadeInLeft" duration={1.5}>
               <img src={img.photoProfile} alt="Benjamin Alexandre" className="profile-image" />
-            </Slide>
+            </ScrollAnimation>
             <div className="profile-overlay">
               <div className="profile-text">
                 <p>

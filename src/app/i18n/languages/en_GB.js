@@ -25,5 +25,17 @@ export default {
   "presentation.item.location": "Mâcon, Burgundy",
   "presentation.item.name": "name",
   "presentation.item.web_developer": "Web Developer",
-  "presentation.item.years_old": "{age} years old"
+  "presentation.item.years_old": "{age} years old",
+  "skills.desc": "My professional and pre-professional experiences have and allow me today to be an autonomous and polyvant developer, of which here is a small overview :",
+  "skills.skills.css": "CSS - SASS - LESS",
+  "skills.skills.english": "English",
+  "skills.skills.git": "Git tools",
+  "skills.skills.html": "HTML5",
+  "skills.skills.java": "Java",
+  "skills.skills.js": "Javascript - React JS",
+  "skills.skills.photoshop": "Photoshop",
+  "skills.skills.php": "Symfony - PHP",
+  "skills.skills.spanish": "Spanish",
+  "skills.skills.sql": "MySQL",
+  "skills.skills.teamwork": "Teamwork"
 };

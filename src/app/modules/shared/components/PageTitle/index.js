@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Col from './Col'
-import Row from './Row'
+import { Row, Col } from 'lib'
 
 const PageTitle = (props) => {
   const { title, position } = props

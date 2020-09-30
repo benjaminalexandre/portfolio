@@ -2,10 +2,10 @@ import React from 'react'
 import { injectIntl } from 'react-intl'
 import PropTypes from 'prop-types'
 import { keyframes } from 'styled-components'
-import { Link } from 'react-scroll'
 
-import { Col, ICONS_LIST, ICONS_SIZE } from 'lib/index'
+import { Col, ICONS_LIST, ICONS_SIZE } from 'lib'
 import img from 'app/assets/images'
+import { ScrollLink } from 'modules/shared/components'
 
 import { BkgImg, Wrapper, StyledIcon as Icon, IconWrapper } from './styled'
 import Logo from './_components/Logo'
@@ -41,11 +41,11 @@ const Home = (props) => {
         </Col>
       </Wrapper>
       <SwitchLanguage {...props} />
-      <Link to="presentation" smooth duration={1000}>
+      <ScrollLink linkTo="presentation">
         <IconWrapper>
           <Icon name={ICONS_LIST.chevronTripleDown} size={ICONS_SIZE.xlarge} />
         </IconWrapper>
-      </Link>
+      </ScrollLink>
     </BkgImg>
   )
 }
