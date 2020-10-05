@@ -23,7 +23,7 @@ const Infos = ({ intl }) => {
           </p>
         </Row>
       </ScrollAnimation>
-      <Divider colors={colors.blue} />
+      <Divider colors={colors.blue} opacity={0.3} />
       <ScrollAnimation animateIn="fadeInRight" duration={1.5}>
         <Descriptions column={2}>
           <Descriptions.Item label={intl.formatMessage({ id: 'presentation.item.name' })}>

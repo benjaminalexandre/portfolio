@@ -8,6 +8,10 @@ import { LocaleWrapper, Menu } from 'modules/shared/components'
 import Home from 'modules/home'
 import Presentation from 'modules/presentation'
 import Skills from 'modules/skills'
+import Experiences from 'modules/experiences'
+import Formation from 'modules/formation'
+import Portfolio from 'modules/portfolio'
+import Contact from 'modules/contact'
 
 const App = () => {
   const [currentLang, setCurrentLang] = useState(lang.FR)
@@ -18,6 +22,10 @@ const App = () => {
       <Menu />
       <Presentation />
       <Skills />
+      <Experiences />
+      <Formation />
+      <Portfolio />
+      <Contact />
     </LocaleWrapper>
   )
 }

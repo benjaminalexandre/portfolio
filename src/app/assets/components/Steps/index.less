@@ -1,0 +1,95 @@
+.step-bar {
+  background-image: linear-gradient(0deg, @purple, @blue);
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  z-index: 0;
+  border-radius: @border-radius-lg;
+  .step {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    z-index: 0;
+    width: 1465px;
+    margin: 20px 0;
+    .step-index {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border: 5px solid white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .step-description {
+      width: 50%;
+      &-left {
+        padding-right: 50px;
+        text-align: right;
+      }
+      &-right {
+        padding-left: 50px;
+        text-align: left;
+      }
+      .step-title {
+        font-size: @font-size-lg-xxl;
+        font-weight: @font-weight-bold;
+      }
+      .step-subtitle {
+        font-size: @font-size-lg;
+        color: @blue;
+      }
+      .step-place {
+        font-size: @font-size-base;
+        font-style: italic;
+      }
+      .step-external-link {
+        font-size: @font-size-base;
+        text-decoration: underline;
+        color: @blue;
+      }
+    }
+    .step-date {
+      width: 50%;
+      &-left {
+        padding-right: 50px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      &-right {
+        padding-left: 50px;
+        display: flex;
+        justify-content: flex-start;
+      }
+      .step-date-wrapper {
+        background-color: @blue;
+        width: max-content;
+        padding: 10px;
+        color: white;
+        border-radius: @border-radius-lg;
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 0 5px;
+  &-left {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid @blue;
+  }
+  &-right {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid @blue;
+  }
+}
