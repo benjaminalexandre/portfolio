@@ -2,9 +2,8 @@ import React from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
 
-import { Row, Col, Divider } from 'lib'
-import { Layout, PageTitle, ScrollAnimation } from 'modules/shared/components'
-import img from 'app/assets/images'
+import { Row, Col, Divider, Layout, PageTitle, ScrollAnimation } from 'lib'
+import img from 'assets/images'
 
 import Infos from './_components/Infos'
 
@@ -18,10 +17,10 @@ const Presentation = ({ intl }) => {
           })}
           position="start"
         />
-        <Row type="flex" justify="space-around" align="middle">
-          <Col span={7} className="profile-container">
+        <Row justify="space-around" align="middle" gutter={[24, 24]}>
+          <Col lg={7} sm={10} xs={24} className="profile-container">
             <ScrollAnimation animateIn="fadeInLeft" duration={1.5}>
-              <img src={img.photoProfile} alt="Benjamin Alexandre" className="profile-image" />
+              <img src={img.photoProfile.url} alt={img.photoProfile.alt} className="profile-image" />
             </ScrollAnimation>
             <div className="profile-overlay">
               <div className="profile-text">
@@ -54,7 +53,7 @@ const Presentation = ({ intl }) => {
               </div>
             </div>
           </Col>
-          <Col span={14}>
+          <Col lg={14} sm={12} xs={24}>
             <Infos />
           </Col>
         </Row>

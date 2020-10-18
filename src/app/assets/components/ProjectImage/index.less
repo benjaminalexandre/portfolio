@@ -1,0 +1,48 @@
+.project-container {
+  position: relative;
+  cursor: pointer;
+  .project-image {
+    display: block;
+    border-radius: @border-radius-lg;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    width: 100%;
+    height: auto;
+  }
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: @blue;
+    border-radius: @border-radius-lg;
+    .project-text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center;
+    }
+  }
+  &:hover .project-overlay {
+    opacity: 0.95;
+  }
+  &:hover p {
+    animation: fadeInDown;
+    animation-duration: 0.5s;
+  }
+  &:hover span {
+    animation: fadeInUp;
+    animation-duration: 0.5s;
+  }
+}

@@ -281,6 +281,7 @@ module.exports = function (webpackEnv) {
         utils: path.resolve('src/app/utils/'),
         modules: path.resolve('src/app/modules/'),
         lib: path.resolve('src/app/lib/'),
+        assets: path.resolve('src/app/assets/'),
         app: path.resolve('src/app/'),
         'react-native': 'react-native-web',
         // Allows for better profiling with ReactDevTools

@@ -8,6 +8,9 @@
   align-items: center;
   z-index: 0;
   border-radius: @border-radius-lg;
+  @media screen and (max-width: @breakpoint-sm) {
+    display: none;
+  }
   .step {
     display: flex;
     justify-content: space-around;
@@ -15,7 +18,16 @@
     z-index: 0;
     width: 1465px;
     margin: 20px 0;
-    .step-index {
+    @media screen and (max-width: @breakpoint-xxl) and (min-width: calc(@breakpoint-lg - 1px)) {
+      width: 900px;
+    }
+    @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+      width: 700px;
+    }
+    @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+      width: 500px;
+    }
+    &-index {
       width: 30px;
       height: 30px;
       background-color: transparent;
@@ -25,15 +37,37 @@
       justify-content: center;
       align-items: center;
     }
-    .step-description {
+    &-description {
       width: 50%;
       &-left {
+        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+          padding-right: 25px;
+        }
+        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+          padding-right: 10px;
+        }
         padding-right: 50px;
         text-align: right;
       }
       &-right {
+        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+          padding-left: 25px;
+        }
+        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+          padding-left: 10px;
+        }
         padding-left: 50px;
         text-align: left;
+      }
+      .step-info-left {
+        > div {
+          justify-content: flex-end;
+        }
+      }
+      .step-info-right {
+        > div {
+          justify-content: flex-start;
+        }
       }
       .step-title {
         font-size: @font-size-lg-xxl;
@@ -53,19 +87,34 @@
         color: @blue;
       }
     }
-    .step-date {
+    &-date {
       width: 50%;
       &-left {
+        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+          padding-right: 25px;
+        }
+        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+          padding-right: 10px;
+        }
         padding-right: 50px;
         display: flex;
         justify-content: flex-end;
       }
       &-right {
+        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+          padding-left: 25px;
+        }
+        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+          padding-left: 10px;
+        }
         padding-left: 50px;
         display: flex;
         justify-content: flex-start;
       }
-      .step-date-wrapper {
+      &-wrapper {
+        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+          font-size: @font-size-xs;
+        }
         background-color: @blue;
         width: max-content;
         padding: 10px;
@@ -78,18 +127,79 @@
   }
 }
 
+.step-bar-minimal {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  border-radius: @border-radius-lg;
+  margin-bottom: 20px;
+  width: 100%;
+  @media screen and (max-width: @breakpoint-sm) {
+    display: flex;
+  }
+  &-date {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    &-wrapper {
+      text-align: center;
+      width: 100%;
+      background-color: @blue;
+      padding: 20px 10px;
+      color: white;
+      border-radius: @border-radius-lg;
+    }
+  }
+
+  &-info {
+    width: 100%;
+    border-radius: @border-radius-lg;
+    padding: 10px;
+    background-color: @background-color-2;
+    &-title {
+      font-size: @font-size-lg-xxs;
+      font-weight: @font-weight-bold;
+    }
+    &-subtitle {
+      font-size: @font-size-lg;
+      color: @blue;
+    }
+    &-place {
+      font-size: @font-size-base;
+      font-style: italic;
+    }
+  }
+}
+
 .arrow {
   width: 0;
   height: 0;
-  margin: 0 5px;
   &-left {
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-right: 15px solid @blue;
+    margin: 0 5px;
   }
   &-right {
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-left: 15px solid @blue;
+    margin: 0 5px;
+  }
+  &-up {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid @blue;
+    margin: 5px 0;
+  }
+  &-down {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid @blue;
+    margin: 5px 0;
   }
 }

@@ -1,0 +1,26 @@
+.button-link {
+  font-family: @basic-font;
+  text-transform: uppercase;
+  font-size: @font-size-lg;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+  &-primary {
+    background: @blue !important;
+    border-radius: @border-radius-base;
+    width: 200px;
+    border: 0;
+    color: white;
+    &:active,
+    &:focus {
+      background: @blue !important;
+      color: white !important;
+    }
+    &:hover {
+      color: white !important;
+      background: darken(@blue, 15%) !important;
+      transition: 0.2s linear;
+    }
+  }
+}

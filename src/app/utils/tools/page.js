@@ -1,16 +1,26 @@
-export const SIZE = {
-  LANDSCAPE: 1024,
-  PORTRAIT: 768
+import {useState, useLayoutEffect} from 'react'
+
+export const BREAKPOINTS = {
+  SM: 576,
+  MD: 768,
+  LG: 992,
+  XL: 1200,
+  XXL: 1600
 }
 
-export const isTabletLandscapeOrientation = () => {
-  return window.innerWidth <= SIZE.LANDSCAPE && window.innerWidth > SIZE.PORTRAIT
+export const isSizeBetween = (min, max) => {
+  return window.innerWidth <= max && window.innerWidth > min
 }
 
-export const isTabletPortraitOrientation = () => {
-  return window.innerWidth <= SIZE.PORTRAIT
-}
-
-export const isTablet = () => {
-  return window.innerWidth <= SIZE.LANDSCAPE
+export const useWindowWidth = () => {
+  const [width, setWidth] = useState(0);
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  return width;
 }

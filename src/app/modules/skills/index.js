@@ -2,8 +2,7 @@ import React from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
 
-import { Row, Col } from 'lib/index'
-import { Layout, PageTitle, ProgressBar } from 'modules/shared/components'
+import { Row, Col, Layout, PageTitle, ProgressBar } from 'lib'
 
 const Skills = ({ intl }) => {
   return (
@@ -15,16 +14,16 @@ const Skills = ({ intl }) => {
           })}
           position="end"
         />
-        <Row type="flex" justify="space-between" align="middle" style={{ marginBottom: '24px' }}>
+        <Row  justify="space-between" align="middle" style={{ marginBottom: '24px' }}>
           <Col>
             <h5>
               <FormattedMessage id="skills.desc" />
             </h5>
           </Col>
         </Row>
-        <Row type="flex" justify="space-between" align="middle">
-          <Col span={11}>
-            <Row gutter={[0, 48]} type="flex" justify="space-around">
+        <Row justify="space-between" align="middle">
+          <Col xl={11} lg={24}>
+            <Row gutter={[0, 48]} justify="space-around">
               <Col span={24}>
                 <ProgressBar width={90} description={intl.formatMessage({ id: 'skills.skills.php' })} />
               </Col>
@@ -45,8 +44,8 @@ const Skills = ({ intl }) => {
               </Col>
             </Row>
           </Col>
-          <Col span={11}>
-            <Row gutter={[0, 48]} type="flex" justify="space-around">
+          <Col xl={11} lg={24}>
+            <Row gutter={[0, 48]} justify="space-around">
               <Col span={24}>
                 <ProgressBar width={80} description={intl.formatMessage({ id: 'skills.skills.git' })} />
               </Col>

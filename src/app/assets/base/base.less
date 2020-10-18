@@ -1,6 +1,8 @@
 // -------- General -----------
 body {
   overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 ul {
   padding: 0;
@@ -24,7 +26,21 @@ img {
 @border-radius-lg: 12px;
 @border-radius-extralg: 24px;
 
+// -------- Breakpoints -----------
+@breakpoint-sm: 576px;
+@breakpoint-md: 768px;
+@breakpoint-lg: 992px;
+@breakpoint-xl: 1200px;
+@breakpoint-xxl: 1600px;
+
 .page-content {
+  @media screen and (max-width: @breakpoint-sm) {
+    padding: 0 25px 50px 25px;
+  }
+  @media screen and (max-width: @breakpoint-xl) and (min-width: calc(@breakpoint-sm + 1px)) {
+    padding: 0 50px 50px 50px;
+  }
+
   padding: 0 200px 50px 200px;
   font-size: @font-size-lg;
   font-family: @basic-font;

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl, FormattedMessage } from 'react-intl'
-import img from 'app/assets/images'
+import img from 'assets/images'
 import lang from 'utils/intl/lang'
 
-import { Button } from 'lib/index'
+import { Button } from 'lib'
 
 const SwitchLanguage = ({ currentLang, onChangeLang }) => {
   const renderFlag = () => {
@@ -13,7 +13,7 @@ const SwitchLanguage = ({ currentLang, onChangeLang }) => {
         return (
           <>
             <div className="flag-wrapper">
-              <img src={img.frenchFlag} alt="French Flag" />
+              <img src={img.frenchFlag.url} alt={img.frenchFlag.alt} />
             </div>
             <div className="text-wrapper">
               <FormattedMessage id="languages.french" />
@@ -25,7 +25,7 @@ const SwitchLanguage = ({ currentLang, onChangeLang }) => {
         return (
           <>
             <div className="flag-wrapper">
-              <img src={img.englishFlag} alt="English Flag" />
+              <img src={img.englishFlag.url} alt={img.frenchFlag.alt} />
             </div>
             <div className="text-wrapper">
               <FormattedMessage id="languages.english" />

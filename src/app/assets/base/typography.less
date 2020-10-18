@@ -7,7 +7,9 @@
 @basic-font: 'Montserrat', sans-serif;
 @text-color: rgba(0, 0, 0, 0.85);
 @font-size-base: 1rem; //17px
-@font-size-page-title: 8rem; //128px
+@font-size-page-title: 7rem; //112px
+@font-size-page-title-lg: 5rem; //112px
+@font-size-page-title-xs: 2rem; //112px
 @font-size-lg-xxl: 2.471rem; //42px
 @font-size-lg-xl: 2.118rem; //36px
 @font-size-lg-sm: 1.824rem; //31px
@@ -29,10 +31,17 @@ html {
 }
 
 h1 {
+  @media screen and (max-width: @breakpoint-xxl) and (min-width: @breakpoint-md) {
+    font-size: @font-size-page-title-lg;
+    letter-spacing: 10px;
+  }
+  @media screen and (max-width: calc(@breakpoint-md - 1px)) {
+    font-size: @font-size-page-title-xs;
+    letter-spacing: 0px;
+  }
   font-family: 'futuristic';
   color: @fadein-blue;
   font-size: @font-size-page-title;
-  font-weight: @font-weight-bold;
   margin: 0;
   letter-spacing: 20px;
 }

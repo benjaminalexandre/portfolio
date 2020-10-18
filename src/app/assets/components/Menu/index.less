@@ -1,9 +1,13 @@
-.menu-wrapper {
+.menu {
+  @media screen and (max-width: @breakpoint-lg) {
+    display: none;
+  }
+  display: block;
   height: 60px;
   position: sticky;
   top: 0;
   z-index: 20;
-  .menu-content {
+  &-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -11,7 +15,13 @@
     align-items: center;
     background: @grey;
     .menu-link {
-      padding: 0;
+      @media screen and (max-width: @breakpoint-xxl) and (min-width: calc(@breakpoint-xl + 1px)) {
+        font-size: @font-size-lg-xxs;
+      }
+      @media screen and (max-width: @breakpoint-xl) and (min-width: calc(@breakpoint-lg + 1px)) {
+        font-size: @font-size-base;
+      }
+      padding: 5px 0;
       text-align: center;
       letter-spacing: 5px;
       color: white;
@@ -28,4 +38,53 @@
       }
     }
   }
+}
+
+.menu-overlay {
+  @media screen and (max-width: @breakpoint-lg) {
+    display: block;
+  }
+  display: none;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  &-open {
+    width: 100%;
+  }
+  &-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+  }
+  &-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    .menu-link {
+      display: block;
+      padding: 5px 0;
+      letter-spacing: 5px;
+      color: white;
+      font-family: 'futuristic';
+      font-size: @font-size-lg-sm;
+    }
+  }
+}
+
+.menu-icon {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  margin: 20px;
 }

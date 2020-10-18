@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Icon as DefaultIcon } from 'antd'
+import Icon, { DownloadOutlined, FacebookFilled, GithubOutlined, LinkedinFilled, CloseOutlined, MenuOutlined } from '@ant-design/icons'
 import * as allIcons from '@mdi/js'
 import styled from 'styled-components'
 
@@ -11,7 +11,14 @@ export const TYPE = {
 
 export const ICONS_LIST = {
   chevronTripleDown: { id: 'ChevronTripleDown', type: TYPE.material },
-  download: { id: 'download', type: TYPE.ant }
+  close: { id: CloseOutlined, type: TYPE.ant },
+  download: { id: DownloadOutlined, type: TYPE.ant },
+  facebook: {id: FacebookFilled, type: TYPE.ant },
+  github: {id: GithubOutlined, type: TYPE.ant},
+  linkedin: {id: LinkedinFilled, type: TYPE.ant},
+  mail: {id: 'EmailOutline', type: TYPE.material},
+  menu: {id: MenuOutlined, type: TYPE.ant},
+  plus: {id: 'Plus', type: TYPE.material}
 }
 
 export const SIZE = {
@@ -36,7 +43,7 @@ export const MARGIN = {
   leftRight: 'leftRight'
 }
 
-const IconStyled = styled(DefaultIcon)`
+const IconStyled = styled(Icon)`
   color: white;
 
   ${(props) => {
@@ -132,10 +139,10 @@ const renderAnt = (props) => {
   const { name, spin, rotate, color, size } = props
   const { id } = name
   const fontSize = getDimensionsAnt(size)
-  return <IconStyled type={id} rotate={rotate} spin={spin} style={{ color, fontSize }} {...props} />
+  return <IconStyled component={id} rotate={rotate} spin={spin} style={{ color, fontSize }} {...props} />
 }
 
-const Icon = (props) => {
+const FinalIcon = (props) => {
   const { name } = props
   const { type } = name
 
@@ -158,13 +165,13 @@ const defaultProps = {
   margin: MARGIN.default
 }
 
-Icon.defaultProps = defaultProps
+FinalIcon.defaultProps = defaultProps
 renderAnt.defaultProps = defaultProps
 renderMaterial.defaultProps = defaultProps
 
 const propTypes = {
   name: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.any.isRequired,
     type: PropTypes.oneOf([TYPE.ant, TYPE.material])
   }).isRequired,
   spin: PropTypes.bool,
@@ -172,11 +179,11 @@ const propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOf([SIZE.default, SIZE.xlarge, SIZE.large, SIZE.small, SIZE.block, SIZE.xsmall]),
   themecolor: PropTypes.oneOf([THEME.default, THEME.primary, THEME.secondary, THEME.small]),
-  margin: PropTypes.oneOf([MARGIN.right, MARGIN.left, MARGIN.leftRight, MARGIN.default])
+  margin: PropTypes.oneOf([MARGIN.right, MARGIN.left, MARGIN.leftRight, MARGIN.default]),
 }
 
-Icon.propTypes = propTypes
+FinalIcon.propTypes = propTypes
 renderAnt.propTypes = propTypes
 renderMaterial.propTypes = propTypes
 
-export default Icon
+export default FinalIcon

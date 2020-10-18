@@ -49,8 +49,11 @@
     background-color: @blue;
     border-radius: @border-radius-lg;
     .profile-text {
+      @media screen and (max-width: @breakpoint-xl) {
+        font-size: @font-size-xs;
+      }
       color: white;
-      font-size: 20px;
+      font-size: @font-size-lg;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -63,5 +66,8 @@
   }
   &:hover .profile-overlay {
     opacity: 0.95;
+    @media screen and (max-width: @breakpoint-sm) {
+      opacity: 0;
+    }
   }
 }

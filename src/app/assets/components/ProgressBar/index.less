@@ -9,6 +9,12 @@
     border-radius: @border-radius-lg;
     padding: 0 10px;
     * {
+      @media screen and (max-width: @breakpoint-xxl) and (min-width: calc(@breakpoint-sm + 1px)) {
+        font-size: @font-size-base;
+      }
+      @media screen and (max-width: @breakpoint-sm) {
+        font-size: @font-size-xs;
+      }
       font-size: @font-size-lg-xxs;
       color: white;
       text-transform: uppercase;
