@@ -43,13 +43,13 @@ export const getExperienceSteps = (intl) => [
     description: (
       <>
         <Row>
-          <Col>{intl.formatMessage({ id: 'experiences.step.b2l.internship' })}</Col>
-          <Col>{intl.formatMessage({ id: 'experiences.step.b2l.hiring' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.b2l.internship' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.b2l.hiring' })}</Col>
         </Row>
         <br />
         <Row>
-          <Col>{intl.formatMessage({ id: 'experiences.step.b2l.desc' })}</Col>
-          <Col>{intl.formatMessage({ id: 'experiences.step.b2l.team' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.b2l.desc' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.b2l.team' })}</Col>
         </Row>
       </>
     ),
@@ -77,12 +77,12 @@ export const getExperienceSteps = (intl) => [
     description: (
       <>
         <Row>
-          <Col>{intl.formatMessage({ id: 'experiences.step.datakit.internship' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.datakit.internship' })}</Col>
         </Row>
         <br />
         <Row>
-          <Col>{intl.formatMessage({ id: 'experiences.step.datakit.desc' })}</Col>
-          <Col>{intl.formatMessage({ id: 'experiences.step.datakit.work' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.datakit.desc' })}</Col>
+          <Col span={24}>{intl.formatMessage({ id: 'experiences.step.datakit.work' })}</Col>
         </Row>
       </>
     ),
@@ -113,9 +113,9 @@ export const getFormationSteps = (intl) => [
     location: `${intl.formatMessage({ id: 'formation.step.miw.place' })}, Hautes-Alpes (05)`,
     description: (
       <Row>
-        <Col>{intl.formatMessage({ id: 'formation.step.miw.level' })}</Col>
-        <Col>{intl.formatMessage({ id: 'formation.step.miw.major' })}</Col>
-        <Col>{intl.formatMessage({ id: 'formation.step.miw.desc' })}</Col>
+        <Col span={24}>{intl.formatMessage({ id: 'formation.step.miw.level' })}</Col>
+        <Col span={24}>{intl.formatMessage({ id: 'formation.step.miw.major' })}</Col>
+        <Col span={24}>{intl.formatMessage({ id: 'formation.step.miw.desc' })}</Col>
       </Row>
     ),
     date: '2018/2019'
@@ -125,8 +125,8 @@ export const getFormationSteps = (intl) => [
     location: `${intl.formatMessage({ id: 'formation.step.iut.place' })}, Ain (01)`,
     description: (
       <Row>
-        <Col>{intl.formatMessage({ id: 'formation.step.iut.level' })}</Col>
-        <Col>{intl.formatMessage({ id: 'formation.step.iut.desc' })}</Col>
+        <Col span={24}>{intl.formatMessage({ id: 'formation.step.iut.level' })}</Col>
+        <Col span={24}>{intl.formatMessage({ id: 'formation.step.iut.desc' })}</Col>
       </Row>
     ),
     date: '2015/2017'
@@ -136,7 +136,7 @@ export const getFormationSteps = (intl) => [
     location: `${intl.formatMessage({ id: 'formation.step.sti.place' })}, Saône-et-Loire (71)`,
     description: (
       <Row>
-        <Col>{intl.formatMessage({ id: 'formation.step.sti.desc' })}</Col>
+        <Col span={24}>{intl.formatMessage({ id: 'formation.step.sti.desc' })}</Col>
       </Row>
     ),
     date: '2013/2015'

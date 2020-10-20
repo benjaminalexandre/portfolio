@@ -70,7 +70,7 @@ export default {
   "presentation.item.name": "nom",
   "presentation.item.web_developer": "Développeur Web",
   "presentation.item.years_old": "{age} ans",
-  "skills.desc": "Mes expériences professionnelles et pré-professionnelles m'ont et me permettent aujourd'hui d'être un développeur autome et polyvant, dont voici un petit aperçu :",
+  "skills.desc": "Mes expériences professionnelles et pré-professionnelles m'ont et me permettent aujourd'hui d'être un développeur autonome et polyvalent, dont voici un petit aperçu :",
   "skills.skills.css": "CSS - SASS - LESS",
   "skills.skills.english": "Anglais",
   "skills.skills.git": "Outils Git",
