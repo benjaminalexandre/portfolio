@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react'
+import React, { useState, useCallback } from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
 
@@ -15,44 +15,52 @@ const Portfolio = ({ intl }) => {
     setCurrentProject(current)
     showProjectModal(true)
   }, [])
-  const hide = useCallback(() => { showProjectModal(false) }, [])
-  const resetState = useCallback(() => { setCurrentProject({}) }, [])
+  const hide = useCallback(() => {
+    showProjectModal(false)
+  }, [])
+  const resetState = useCallback(() => {
+    setCurrentProject({})
+  }, [])
 
   return (
-      <Layout id="portfolio" modulo={1}>
-        <PageTitle
-          title={intl.formatMessage({
-            id: 'menu.portfolio'
-          })}
-          position="end"
-        />
-        <Row  justify="center" align="middle" style={{ marginBottom: '24px' }}>
-          <Col>
-            <h5>
-              <FormattedMessage id="portfolio.desc" />
-            </h5>
-          </Col>
-        </Row>
-        <Row justify="space-between" align="stretch" gutter={[16, 16]}>
-          <Col md={10} xs={24}>
-            <ScrollAnimation animateIn="fadeInLeft" duration={1.5}>
-              <ProjectImage project={projects.GRAINE_BIOLANDE} onClick={show}/>
-            </ScrollAnimation>
-          </Col>
-          <Col md={6} xs={24}>
-            <Row justify="space-between" align="middle" gutter={[16, 16]}>
-              <Col span={24}>
-                <ScrollAnimation animateIn="zoomIn" duration={1.5}>
-                  <ProjectImage project={projects.PORTFOLIO} onClick={show}/>
-                </ScrollAnimation>
-              </Col>
-              <Col span={24} />
-            </Row>
-          </Col>
-          <Col md={8} />
-        </Row>
-        <ProjectModal visible={isProjectModalShown} onCancel={hide} project={currentProject} afterClose={resetState}/>
-      </Layout>
+    <Layout id="portfolio" modulo={1}>
+      <PageTitle
+        title={intl.formatMessage({
+          id: 'menu.portfolio'
+        })}
+        position="end"
+      />
+      <Row justify="center" align="middle" style={{ marginBottom: '24px' }}>
+        <Col>
+          <h5>
+            <FormattedMessage id="portfolio.desc" />
+          </h5>
+        </Col>
+      </Row>
+      <Row justify="space-between" align="middle" gutter={[24, 24]}>
+        <Col md={10} xs={24}>
+          <ScrollAnimation animateIn="fadeInLeft" duration={1.5}>
+            <ProjectImage project={projects.ATELIERBREZE} onClick={show} />
+          </ScrollAnimation>
+        </Col>
+        <Col md={7} xs={24}>
+          <ScrollAnimation animateIn="zoomIn" duration={1.5}>
+            <ProjectImage project={projects.GRAINE_BIOLANDE} onClick={show} />
+          </ScrollAnimation>
+        </Col>
+        <Col md={7} xs={24} style={{ overflow: 'clip visible' }}>
+          <ScrollAnimation animateIn="fadeInRight" duration={1.5}>
+            <ProjectImage project={projects.PORTFOLIO} onClick={show} />
+          </ScrollAnimation>
+        </Col>
+      </Row>
+      <ProjectModal
+        visible={isProjectModalShown}
+        onCancel={hide}
+        project={currentProject}
+        afterClose={resetState}
+      />
+    </Layout>
   )
 }
 

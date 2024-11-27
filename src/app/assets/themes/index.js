@@ -1,8 +1,9 @@
 export const colors = {
-  blue: '#41a7f5',
-  purple: '#861d8a',
-  grey: '#808080',
-  lightGrey: '#e6e6e6'
+  blue: '#2e8cd9',
+  darkBlue: '#184a73',
+  grey: '#9a9a9a',
+  lightGrey: '#e6e6e6',
+  white: '#fff'
 }
 
 export const font = {

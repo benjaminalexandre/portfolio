@@ -12,6 +12,7 @@ export {
   THEME as ICONS_THEME,
   MARGIN as ICONS_MARGIN
 } from './components/Icon'
+export { default as ImageCarousel } from 'react-image-gallery'
 export { default as Layout } from './components/Layout'
 export { default as LocaleWrapper } from './components/LocaleWrapper'
 export { default as Menu } from './components/Menu'

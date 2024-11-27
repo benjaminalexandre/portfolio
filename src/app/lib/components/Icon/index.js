@@ -1,6 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon, { DownloadOutlined, FacebookFilled, GithubOutlined, LinkedinFilled, CloseOutlined, MenuOutlined } from '@ant-design/icons'
+import Icon, {
+  DownloadOutlined,
+  FacebookFilled,
+  GithubOutlined,
+  LinkedinFilled,
+  CloseOutlined,
+  MenuOutlined
+} from '@ant-design/icons'
 import * as allIcons from '@mdi/js'
 import styled from 'styled-components'
 
@@ -10,15 +17,18 @@ export const TYPE = {
 }
 
 export const ICONS_LIST = {
+  book: { id: 'BookOpenPageVariantOutline', type: TYPE.material },
   chevronTripleDown: { id: 'ChevronTripleDown', type: TYPE.material },
   close: { id: CloseOutlined, type: TYPE.ant },
   download: { id: DownloadOutlined, type: TYPE.ant },
-  facebook: {id: FacebookFilled, type: TYPE.ant },
-  github: {id: GithubOutlined, type: TYPE.ant},
-  linkedin: {id: LinkedinFilled, type: TYPE.ant},
-  mail: {id: 'EmailOutline', type: TYPE.material},
-  menu: {id: MenuOutlined, type: TYPE.ant},
-  plus: {id: 'Plus', type: TYPE.material}
+  earth: { id: 'Earth', type: TYPE.material },
+  facebook: { id: FacebookFilled, type: TYPE.ant },
+  github: { id: GithubOutlined, type: TYPE.ant },
+  linkedin: { id: LinkedinFilled, type: TYPE.ant },
+  mail: { id: 'EmailOutline', type: TYPE.material },
+  menu: { id: MenuOutlined, type: TYPE.ant },
+  plus: { id: 'Plus', type: TYPE.material },
+  rugby: { id: 'Rugby', type: TYPE.material }
 }
 
 export const SIZE = {
@@ -179,7 +189,7 @@ const propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOf([SIZE.default, SIZE.xlarge, SIZE.large, SIZE.small, SIZE.block, SIZE.xsmall]),
   themecolor: PropTypes.oneOf([THEME.default, THEME.primary, THEME.secondary, THEME.small]),
-  margin: PropTypes.oneOf([MARGIN.right, MARGIN.left, MARGIN.leftRight, MARGIN.default]),
+  margin: PropTypes.oneOf([MARGIN.right, MARGIN.left, MARGIN.leftRight, MARGIN.default])
 }
 
 FinalIcon.propTypes = propTypes

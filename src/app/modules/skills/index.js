@@ -14,7 +14,7 @@ const Skills = ({ intl }) => {
           })}
           position="end"
         />
-        <Row  justify="space-between" align="middle" style={{ marginBottom: '24px' }}>
+        <Row justify="space-between" align="middle" style={{ marginBottom: '24px' }}>
           <Col>
             <h5>
               <FormattedMessage id="skills.desc" />
@@ -28,10 +28,10 @@ const Skills = ({ intl }) => {
                 <ProgressBar width={90} description={intl.formatMessage({ id: 'skills.skills.php' })} />
               </Col>
               <Col span={24}>
-                <ProgressBar width={85} description={intl.formatMessage({ id: 'skills.skills.sql' })} />
+                <ProgressBar width={90} description={intl.formatMessage({ id: 'skills.skills.js' })} />
               </Col>
               <Col span={24}>
-                <ProgressBar width={80} description={intl.formatMessage({ id: 'skills.skills.js' })} />
+                <ProgressBar width={85} description={intl.formatMessage({ id: 'skills.skills.sql' })} />
               </Col>
               <Col span={24}>
                 <ProgressBar width={80} description={intl.formatMessage({ id: 'skills.skills.html' })} />

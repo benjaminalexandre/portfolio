@@ -5,33 +5,41 @@ import { Row, Col } from 'lib'
 import img from 'assets/images'
 
 export const datas = {
-  fullName: "Benjamin ALEXANDRE",
-  email: "benjamin.alexandre71@orange.fr",
+  fullName: 'Benjamin ALEXANDRE',
+  email: 'benjamin.alexandre71@orange.fr',
   links: {
-    linkedin: "https://www.linkedin.com/in/benjamin-alexandre-a8188a183/",
-    facebook: "https://www.facebook.com/benj.alexandre/",
-    github: "https://github.com/benjaminalexandre"
+    linkedin: 'https://www.linkedin.com/in/benjamin-alexandre-a8188a183/',
+    facebook: 'https://www.facebook.com/benj.alexandre/',
+    github: 'https://github.com/benjaminalexandre'
   },
-  copyright: "Copyright All Right Reserved 2020 Benjamin Alexandre"
+  copyright: 'Copyright All Right Reserved 2020 Benjamin Alexandre'
 }
 
 export const projects = {
   GRAINE_BIOLANDE: {
     img: img.lagrainebiolande,
-    url: "http://lagrainebiolande.fr",
-    title: "La Graine Biolande",
-    client: "La Graine Biolande",
-    descId: "portfolio.project.graine_bio.desc",
-    techno: "Wordpress, CSS",
-    year: "2017"
+    url: 'http://lagrainebiolande.fr',
+    title: 'La Graine Biolande',
+    client: 'La Graine Biolande',
+    descId: 'portfolio.project.graine_bio.desc',
+    techno: 'Wordpress, CSS',
+    year: '2017'
   },
   PORTFOLIO: {
     img: img.portfolio,
-    url: "##",
-    title: "Portfolio",
-    descId: "portfolio.project.portfolio.desc",
-    techno: "React JS",
-    year: "2020"
+    url: '##',
+    title: 'Portfolio',
+    descId: 'portfolio.project.portfolio.desc',
+    techno: 'React JS',
+    year: '2020'
+  },
+  ATELIERBREZE: {
+    img: img.atelierbreze,
+    url: 'https://atelierbreze.fr',
+    title: 'Atelier Brézé',
+    descId: 'portfolio.project.atelier.desc',
+    techno: 'React JS / PHP Symfony',
+    year: '2021'
   }
 }
 

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { Row, Col } from 'lib'
 
 const PageTitle = (props) => {
-  const { title, position } = props
+  const { title, position, className } = props
 
   return (
     <div className="page-title">
       <Row justify={position} gutter={20}>
         <Col>
-          <h1>{title}</h1>
+          <h1 className={className}>{title}</h1>
         </Col>
       </Row>
     </div>
@@ -23,7 +23,8 @@ PageTitle.defaultProps = {
 
 PageTitle.propTypes = {
   title: PropTypes.node,
-  position: PropTypes.string
+  position: PropTypes.string,
+  className: PropTypes.string
 }
 
 export default PageTitle

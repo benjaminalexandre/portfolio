@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 
 import 'assets/themes/index.less'
@@ -27,7 +28,7 @@ const App = () => {
       <Formation />
       <Portfolio />
       <Contact />
-      <Footer currentLang={currentLang}/>
+      <Footer currentLang={currentLang} />
     </LocaleWrapper>
   )
 }

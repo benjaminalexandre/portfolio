@@ -9,11 +9,13 @@ const { Content } = BaseLayout
 
 const ContentLayout = ({ children, id, modulo }) => {
   return (
-    <BaseLayout style={{ flex: '1', borderBottom: `15px solid ${colors.blue}` }}>
+    <BaseLayout style={{ flex: '1', borderBottom: `15px solid ${colors.darkBlue}` }}>
       <Content>
         <Element name={id}>
           <div className="container">
-            <div className={`page-content page-content-${modulo}`}>{children}</div>
+            <div id={id} className={`page-content page-content-${modulo}`}>
+              {children}
+            </div>
           </div>
         </Element>
       </Content>

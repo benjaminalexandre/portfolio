@@ -10,20 +10,21 @@ const Experiences = ({ intl }) => {
   const [showMinimalSteps, setShowMinimalSteps] = useState(false)
 
   useEffect(() => {
-    setShowMinimalSteps(isSizeBetween(0, BREAKPOINTS.SM))
+    setShowMinimalSteps(isSizeBetween(0, BREAKPOINTS.MD))
   }, [useWindowWidth()])
 
   return (
-    <Layout id="experiences" modulo={0}>
+    <Layout id="experiences" modulo={1}>
       <PageTitle
         title={intl.formatMessage({
           id: 'menu.experiences'
         })}
         position="center"
+        className="light"
       />
       <Row justify="center" align="middle" style={{ marginBottom: '24px' }}>
         <Col>
-          <h5>
+          <h5 className="light">
             <FormattedMessage id="experiences.desc" />
           </h5>
         </Col>
@@ -34,7 +35,7 @@ const Experiences = ({ intl }) => {
         ) : (
           <Steps.Default steps={getExperienceSteps(intl)} />
         )}
-        </Row>
+      </Row>
     </Layout>
   )
 }

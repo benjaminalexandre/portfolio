@@ -11,7 +11,7 @@ const ScrollLink = ({ children, linkTo, ...props }) => {
       spy
       className="menu-link"
       activeClass="menu-link-active"
-      offset={-25}
+      offset={-100}
       {...props}
     >
       {children}

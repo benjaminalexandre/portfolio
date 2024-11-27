@@ -1,5 +1,5 @@
 .step-bar {
-  background-image: linear-gradient(0deg, @purple, @blue);
+  background-image: linear-gradient(0deg, @dark-blue, @blue);
   width: 25px;
   display: flex;
   flex-direction: column;
@@ -8,10 +8,17 @@
   align-items: center;
   z-index: 0;
   border-radius: @border-radius-lg;
-  @media screen and (max-width: @breakpoint-sm) {
+  @media screen and (max-width: @breakpoint-md) {
     display: none;
   }
   .step {
+    &:hover .step-description-wrapper,
+    &:hover .step-date {
+      transform: scale(1.05);
+    }
+    &:hover .step-description-wrapper {
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    }
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -31,7 +38,7 @@
       width: 30px;
       height: 30px;
       background-color: transparent;
-      border: 5px solid white;
+      border: 5px solid @background-color-2;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -39,25 +46,31 @@
     }
     &-description {
       width: 50%;
+      &-wrapper {
+        transition: 0.3s ease-in-out;
+        background-color: @white;
+        padding: 5px 25px 15px;
+      }
       &-left {
-        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
-          padding-right: 25px;
-        }
         @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
           padding-right: 10px;
         }
-        padding-right: 50px;
+        padding-right: 25px;
         text-align: right;
+        .step-description-wrapper {
+          transform-origin: right center;
+        }
       }
       &-right {
-        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
-          padding-left: 25px;
-        }
         @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
           padding-left: 10px;
         }
-        padding-left: 50px;
+        padding-left: 25px;
         text-align: left;
+
+        .step-description-wrapper {
+          transform-origin: left center;
+        }
       }
       .step-info-left {
         > div {
@@ -88,28 +101,29 @@
       }
     }
     &-date {
+      transition: 0.3s ease-in-out;
       width: 50%;
       &-left {
-        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+        transform-origin: right center;
+        > div {
+          @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+            padding-right: 10px;
+          }
           padding-right: 25px;
+          display: flex;
+          justify-content: flex-end;
         }
-        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
-          padding-right: 10px;
-        }
-        padding-right: 50px;
-        display: flex;
-        justify-content: flex-end;
       }
       &-right {
-        @media screen and (max-width: @breakpoint-lg) and (min-width: calc(@breakpoint-md - 1px)) {
+        transform-origin: left center;
+        > div {
+          @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
+            padding-left: 10px;
+          }
           padding-left: 25px;
+          display: flex;
+          justify-content: flex-start;
         }
-        @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
-          padding-left: 10px;
-        }
-        padding-left: 50px;
-        display: flex;
-        justify-content: flex-start;
       }
       &-wrapper {
         @media screen and (max-width: @breakpoint-md) and (min-width: calc(@breakpoint-sm - 1px)) {
@@ -119,7 +133,6 @@
         width: max-content;
         padding: 10px;
         color: white;
-        border-radius: @border-radius-lg;
         position: relative;
         top: -8px;
       }
@@ -133,16 +146,24 @@
   justify-content: space-between;
   align-items: center;
   z-index: 0;
-  border-radius: @border-radius-lg;
   margin-bottom: 20px;
   width: 100%;
-  @media screen and (max-width: @breakpoint-sm) {
+  @media screen and (max-width: @breakpoint-md) {
     display: flex;
   }
+  &:hover .step-bar-minimal-info,
+  &:hover .step-bar-minimal-date {
+    transform: scale(1.05);
+  }
+  &:hover .step-bar-minimal-info {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
   &-date {
+    transition: 0.3s ease-in-out;
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 15px;
     height: 100%;
     width: 100%;
     &-wrapper {
@@ -151,15 +172,16 @@
       background-color: @blue;
       padding: 20px 10px;
       color: white;
-      border-radius: @border-radius-lg;
     }
   }
 
   &-info {
+    transition: 0.3s ease-in-out;
     width: 100%;
-    border-radius: @border-radius-lg;
-    padding: 10px;
-    background-color: @background-color-2;
+    > div {
+      background-color: @white;
+      padding: 5px 25px 15px;
+    }
     &-title {
       font-size: @font-size-lg-xxs;
       font-weight: @font-weight-bold;
@@ -182,24 +204,24 @@
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-right: 15px solid @blue;
-    margin: 0 5px;
+    margin: 0 -3px;
   }
   &-right {
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-left: 15px solid @blue;
-    margin: 0 5px;
+    margin: 0 -3px;
   }
   &-up {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-bottom: 15px solid @blue;
-    margin: 5px 0;
+    margin: -3px auto;
   }
   &-down {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 15px solid @blue;
-    margin: 5px 0;
+    margin: -3px auto;
   }
 }

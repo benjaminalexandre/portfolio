@@ -1,3 +1,49 @@
+@import (less) '../../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
+
+.image-gallery {
+  * {
+    height: 100%;
+  }
+  height: 100%;
+  &-slides {
+    .image-gallery-image {
+      min-height: 600px;
+      max-height: none !important;
+    }
+  }
+}
+
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+}
+.image-modal {
+  .ant-modal-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    @media screen and (max-width: @breakpoint-sm) {
+      margin-top: -15%;
+      .ant-modal-close-x {
+        * > svg {
+          fill: white;
+        }
+      }
+    }
+
+    .ant-modal-body {
+      padding: 0;
+      .description-wrapper {
+        background: white;
+        padding: 24px;
+        text-align: justify;
+        .time-wrapper {
+          font-weight: @font-weight-semi-bold;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
 .button-link {
   font-family: @basic-font;
   text-transform: uppercase;

@@ -1,9 +1,15 @@
 .footer {
   background-color: @blue;
-  &-text {
-    font-family: 'Montserrat';
-    color: white;
+
+  &-copyright {
+    padding-bottom: 30px;
     text-align: center;
-    padding: 20px 0;
+    color: @white;
+    &-link {
+      color: @white;
+      &:hover {
+        color: @grey;
+      }
+    }
   }
 }

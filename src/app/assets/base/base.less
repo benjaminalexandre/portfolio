@@ -11,10 +11,11 @@ img {
   width: 100%;
 }
 // -------- Colors -----------
-@blue: #41a7f5;
-@fadein-blue: fadeout(@blue, 70%);
-@purple: #861d8a;
-@grey: #808080;
+@blue: #2e8cd9;
+@fadein-blue: fadeout(@blue, 80%);
+@dark-blue: #184a73;
+@grey: #9a9a9a;
+@white: #fff;
 @light-grey: #e6e6e6;
 @background-color-1: #fff;
 @background-color-2: #f2f2f2;
@@ -58,4 +59,22 @@ img {
     padding: 1.333rem 0;
     width: 100%;
   }
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: @border-radius-lg;
+  background-color: @dark-blue;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: lighten(@dark-blue, 10%);
 }

@@ -14,60 +14,66 @@
 
   &-primary {
     background: @blue;
-    color: white;
+    color: @white;
     width: 200px;
     border: 0;
-    border-radius: @border-radius-base;
+    transition: 0.2s ease-in-out;
     &:hover {
-      color: white;
+      color: @white;
       background: darken(@blue, 15%);
-      transition: 0.2s linear;
     }
   }
 }
 
-.profile-container {
-  position: relative;
-  .profile-image {
-    display: block;
-    border-radius: @border-radius-lg;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    width: 100%;
-    height: auto;
-  }
-  .profile-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
-    background-color: @blue;
-    border-radius: @border-radius-lg;
-    .profile-text {
-      @media screen and (max-width: @breakpoint-xl) {
-        font-size: @font-size-xs;
-      }
-      color: white;
-      font-size: @font-size-lg;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 90%;
+.profile {
+  &-container {
+    background-color: transparent;
+    @media screen and (max-width: @breakpoint-xl) {
+      width: 300px;
+      height: 320px;
+    }
+    @media screen and (max-width: @breakpoint-md) {
+      margin: auto;
+    }
+    width: 410px;
+    height: 440px;
+    perspective: 1000px;
+    &:hover &-inner {
+      transform: rotateY(180deg);
+    }
+    &-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
       text-align: center;
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+      &-front,
+      &-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+      &-back {
+        background-color: @dark-blue;
+        color: @white;
+        transform: rotateY(180deg);
+      }
     }
   }
-  &:hover .profile-overlay {
-    opacity: 0.95;
-    @media screen and (max-width: @breakpoint-sm) {
-      opacity: 0;
+  &-text {
+    @media screen and (max-width: @breakpoint-xl) {
+      font-size: @font-size-xs;
     }
+    font-size: @font-size-lg;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
   }
 }

@@ -1,4 +1,12 @@
 .year-step {
+  &:hover &-info-wrapper,
+  &:hover &-description-wrapper {
+    transform: scale(1.05);
+  }
+  &:hover &-info,
+  &:hover &-description {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
   @media screen and (max-width: @breakpoint-sm) {
     display: none;
   }
@@ -8,8 +16,12 @@
   justify-content: space-around;
   margin: 10px 0;
   &-info {
-    width: 40%;
-    border-radius: @border-radius-lg;
+    transition: 0.3s ease-in-out;
+    &-wrapper {
+      transform-origin: left center;
+      transition: 0.3s ease-in-out;
+      width: 40%;
+    }
     padding: 10px;
     background-color: white;
     text-align: right;
@@ -31,12 +43,15 @@
       width: max-content;
       padding: 20px 10px;
       color: white;
-      border-radius: @border-radius-lg;
     }
   }
   &-description {
-    width: 40%;
-    border-radius: @border-radius-lg;
+    transition: 0.3s ease-in-out;
+    &-wrapper {
+      transform-origin: right center;
+      transition: 0.3s ease-in-out;
+      width: 40%;
+    }
     background-color: white;
     padding: 10px;
   }
@@ -52,11 +67,20 @@
   flex-direction: column;
   justify-content: space-around;
   margin: 10px 0;
+  &:hover .year-step-minimal-info,
+  &:hover .year-step-minimal-description {
+    transform: scale(1.05);
+  }
+  &:hover .year-step-minimal-info {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
   &-info {
+    transition: 0.3s ease-in-out;
     width: 100%;
-    border-radius: @border-radius-lg;
-    padding: 10px;
-    background-color: white;
+    > div {
+      background-color: white;
+      padding: 10px;
+    }
     text-align: right;
     &-title {
       font-size: @font-size-lg-xxs;
@@ -69,6 +93,7 @@
   }
   &-date {
     display: flex;
+    margin: 15px 0;
     align-items: center;
     flex-direction: column;
     height: 100%;
@@ -77,13 +102,14 @@
       width: max-content;
       padding: 20px 10px;
       color: white;
-      border-radius: @border-radius-lg;
     }
   }
   &-description {
+    transition: 0.3s ease-in-out;
     width: 100%;
-    border-radius: @border-radius-lg;
-    background-color: white;
-    padding: 10px;
+    > div {
+      background-color: white;
+      padding: 10px;
+    }
   }
 }
